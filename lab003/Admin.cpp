@@ -1,15 +1,15 @@
 #include "Admin.h"
 
-// Конструктор
-Admin::Admin(const std::string& username, const std::string& password)
+// ГЉГ®Г­Г±ГІГ°ГіГЄГІГ®Г°
+Admin::Admin(const std::string_veiw username, const std::string_veiw password)
     : username(username), password(password) {}
 
-// Аутентификация администратора
-bool Admin::authenticate(const std::string& username, const std::string& password) const {
+// ГЂГіГІГҐГ­ГІГЁГґГЁГЄГ Г¶ГЁГї Г Г¤Г¬ГЁГ­ГЁГ±ГІГ°Г ГІГ®Г°Г 
+bool Admin::authenticate(const std::string_veiw username, const std::string_veiw password) const {
     return this->username == username && this->password == password;
 }
 
-// Получение имени администратора
+// ГЏГ®Г«ГіГ·ГҐГ­ГЁГҐ ГЁГ¬ГҐГ­ГЁ Г Г¤Г¬ГЁГ­ГЁГ±ГІГ°Г ГІГ®Г°Г 
 std::string Admin::getUsername() const {
     return username;
 }
