@@ -19,7 +19,9 @@ std::istream& operator>>(std::istream& is, Contact& contact) {
     std::getline(is, contact.phone);
     std::getline(is, contact.email);
 
-    std::string street, city, postalCode;
+    std::string street;
+    std::string city;
+    std:: string postalCode;
     std::getline(is, street);
     std::getline(is, city);
     std::getline(is, postalCode);
