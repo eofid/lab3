@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AddressBook">
+    <Position X="2" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAQAAAAAAQAACBAAAAAgAAAAAAAAAAIQAAAAAAA=</HashCode>
+      <FileName>AddressBook.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Address">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAgAAAAAAAAACCAAAAAAAgACAAAAAAAAgAA=</HashCode>
+      <FileName>Address.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Admin">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAQEAAAACAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Admin.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AdminPanel">
+    <Position X="9.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAEAAAAAAAIAAAACACAACAAAAAAACAAAAIAAAAAEEA=</HashCode>
+      <FileName>AdminPanel.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Company">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAIAAAAAAEAAAAAAAEBAAAAAA=</HashCode>
+      <FileName>Company.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Contact">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgCAAAAAAAAAIEAAAgAAAAAAAAAAQ=</HashCode>
+      <FileName>Contact.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="User">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAEAAAAAAAAAAAAAAAEAAAACAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>User.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UserPanel">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <InheritanceLine Type="IPanel" FixedFromPoint="true">
+      <Path>
+        <Point X="13" Y="3.25" />
+        <Point X="13" Y="2.875" />
+        <Point X="11.875" Y="2.875" />
+        <Point X="11.875" Y="3.459" />
+        <Point X="10.75" Y="3.459" />
+        <Point X="10.75" Y="3.275" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AgAEAAAAAAgIAAAACACAAAAAAAAAACAAAAIAAAAAEEA=</HashCode>
+      <FileName>UserPanel.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IPanel">
+    <Position X="12.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAEA=</HashCode>
+      <FileName>IPanel.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AddressBookInterface">
+    <Position X="8" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAEAAAAAAAIAAAACACAAAAAAAAAAIAAAAIAAAAAEAA=</HashCode>
+      <FileName>AddressBookInterface.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
