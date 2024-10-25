@@ -27,7 +27,7 @@ public:
                (lhs.company.getPosition() == rhs.company.getPosition());
     }
 
-    // Дружественный оператор для записи в поток
+    // Дружественные операторы для потоков
     friend std::ostream& operator<<(std::ostream& os, const Contact& contact);
     friend std::istream& operator>>(std::istream& is, Contact& contact);
 };
