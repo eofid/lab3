@@ -40,7 +40,8 @@ public:
         std::getline(is, postalCode);
         contact.address = Address(street, city, postalCode);
 
-        std::string companyName, position;
+        std::string companyName;
+        std::string position;
         std::getline(is, companyName);
         std::getline(is, position);
         contact.company = Company(companyName, position);
