@@ -15,10 +15,10 @@ private:
     Company company;
 
 public:
-    // Прототип конструктора
+    // Конструктор
     Contact(const std::string& name, const std::string& phone, const std::string& email, 
             const Address& address, const Company& company);
-    
+
     // Доступ к приватным членам класса
     std::string getName() const { return name; }
     std::string getPhone() const { return phone; }
