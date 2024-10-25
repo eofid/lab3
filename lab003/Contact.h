@@ -27,7 +27,17 @@ public:
     Company getCompany() const { return company; }
 
     // Перегруженные операторы как скрытые друзья
-    friend std::ostream& operator<<(std::ostream& os, const Contact& contact);
+    friend std::ostream& operator<<(std::ostream& os, const Contact& contact){
+        os << contact.name << "\n" 
+       << contact.phone << "\n" 
+       << contact.email << "\n"
+       << contact.address.getStreet() << "\n" 
+       << contact.address.getCity() << "\n" 
+       << contact.address.getPostalCode() << "\n"
+       << contact.company.getName() << "\n" 
+       << contact.company.getPosition() << "\n";
+    return os;
+    }
     friend std::istream& operator>>(std::istream& is, Contact& contact);
 };
 
