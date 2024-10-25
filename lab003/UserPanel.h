@@ -11,7 +11,7 @@ private:
 
 public:
     // Конструктор UserPanel, принимающий ссылку на AddressBook
-    UserPanel(AddressBook& addressBook);
+    explicit UserPanel(AddressBook& addressBook);
 
     // Реализация виртуального метода для отображения меню
     void displayMenu() override;
