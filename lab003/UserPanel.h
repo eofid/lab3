@@ -11,13 +11,13 @@ private:
     AddressBook& addressBook;
 
 public:
-    UserPanel(AddressBook& addressBook);
+    explicit UserPanel(AddressBook& addressBook);
     void displayMenu() override;
     void viewContacts() const override;
     void searchContacts() const override;
     void loadContactsFromFile() override;
 
-    // Пустые реализации для методов, которые не нужны пользователю
+    // ГЏГіГ±ГІГ»ГҐ Г°ГҐГ Г«ГЁГ§Г Г¶ГЁГЁ Г¤Г«Гї Г¬ГҐГІГ®Г¤Г®Гў, ГЄГ®ГІГ®Г°Г»ГҐ Г­ГҐ Г­ГіГ¦Г­Г» ГЇГ®Г«ГјГ§Г®ГўГ ГІГҐГ«Гѕ
     void addContact() override {}
     void editContact() override {}
     void deleteContact() override {}
