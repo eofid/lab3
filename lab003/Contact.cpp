@@ -5,18 +5,7 @@ Contact::Contact(const std::string& name, const std::string& phone, const std::s
                  const Address& address, const Company& company)
     : name(name), phone(phone), email(email), address(address), company(company) {}
 
-// Дружественная функция для перегрузки оператора вывода
-std::ostream& operator<<(std::ostream& os, const Contact& contact) {
-    os << contact.name << "\n" 
-       << contact.phone << "\n" 
-       << contact.email << "\n"
-       << contact.address.getStreet() << "\n" 
-       << contact.address.getCity() << "\n" 
-       << contact.address.getPostalCode() << "\n"
-       << contact.company.getName() << "\n" 
-       << contact.company.getPosition() << "\n";
-    return os;
-}
+
 
 // Дружественная функция для перегрузки оператора ввода
 std::istream& operator>>(std::istream& is, Contact& contact) {
