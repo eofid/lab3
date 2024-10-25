@@ -11,7 +11,8 @@ using namespace std;
 
 // Логин пользователя
 bool login(bool& isAdmin) {
-    string username, password;
+    string username;
+    string password;
     cout << "Введите имя пользователя: ";
     cin >> username;
     cout << "Введите пароль: ";
