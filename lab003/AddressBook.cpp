@@ -2,128 +2,135 @@
 #include <iostream>
 #include <fstream>
 
-// Добавление нового контакта
+// Г„Г®ГЎГ ГўГ«ГҐГ­ГЁГҐ Г­Г®ГўГ®ГЈГ® ГЄГ®Г­ГІГ ГЄГІГ 
 void AddressBook::addContact() {
-    std::string name, phone, email, street, city, postalCode, companyName, position;
+    std::string name;
+    std:: string phone;
+    std:: string email;
+    std:: string street;
+    std:: string city;
+    std:: string postalCode;
+    std:: string companyName;
+    std:: tring position;
 
-    std::cout << "Введите имя: ";
+    std::cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГЁГ¬Гї: ";
     std::cin >> name;
-    std::cout << "Введите телефон: ";
+    std::cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГІГҐГ«ГҐГґГ®Г­: ";
     std::cin >> phone;
-    std::cout << "Введите email: ";
+    std::cout << "Г‚ГўГҐГ¤ГЁГІГҐ email: ";
     std::cin >> email;
 
-    std::cout << "Введите улицу: ";
-    std::cin.ignore(); // Игнорируем символ новой строки
+    std::cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГіГ«ГЁГ¶Гі: ";
+    std::cin.ignore(); // Г€ГЈГ­Г®Г°ГЁГ°ГіГҐГ¬ Г±ГЁГ¬ГўГ®Г« Г­Г®ГўГ®Г© Г±ГІГ°Г®ГЄГЁ
     std::getline(std::cin, street);
-    std::cout << "Введите город: ";
+    std::cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГЈГ®Г°Г®Г¤: ";
     std::getline(std::cin, city);
-    std::cout << "Введите почтовый индекс: ";
+    std::cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГЇГ®Г·ГІГ®ГўГ»Г© ГЁГ­Г¤ГҐГЄГ±: ";
     std::getline(std::cin, postalCode);
 
-    std::cout << "Введите название компании: ";
+    std::cout << "Г‚ГўГҐГ¤ГЁГІГҐ Г­Г Г§ГўГ Г­ГЁГҐ ГЄГ®Г¬ГЇГ Г­ГЁГЁ: ";
     std::getline(std::cin, companyName);
-    std::cout << "Введите должность: ";
+    std::cout << "Г‚ГўГҐГ¤ГЁГІГҐ Г¤Г®Г«Г¦Г­Г®Г±ГІГј: ";
     std::getline(std::cin, position);
 
     Address address(street, city, postalCode);
     Company company(companyName, position);
 
     contacts.emplace_back(name, phone, email, address, company);
-    std::cout << "Контакт добавлен!\n";
+    std::cout << "ГЉГ®Г­ГІГ ГЄГІ Г¤Г®ГЎГ ГўГ«ГҐГ­!\n";
 }
 
-// Редактирование контакта по имени
+// ГђГҐГ¤Г ГЄГІГЁГ°Г®ГўГ Г­ГЁГҐ ГЄГ®Г­ГІГ ГЄГІГ  ГЇГ® ГЁГ¬ГҐГ­ГЁ
 void AddressBook::editContact() {
     std::string name;
-    std::cout << "Введите имя контакта для редактирования: ";
+    std::cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГЁГ¬Гї ГЄГ®Г­ГІГ ГЄГІГ  Г¤Г«Гї Г°ГҐГ¤Г ГЄГІГЁГ°Г®ГўГ Г­ГЁГї: ";
     std::cin >> name;
 
     for (auto& contact : contacts) {
         if (contact.name == name) {
-            std::cout << "Редактирование контакта " << contact.name << std::endl;
-            std::cout << "Введите новое имя: ";
+            std::cout << "ГђГҐГ¤Г ГЄГІГЁГ°Г®ГўГ Г­ГЁГҐ ГЄГ®Г­ГІГ ГЄГІГ  " << contact.name << std::endl;
+            std::cout << "Г‚ГўГҐГ¤ГЁГІГҐ Г­Г®ГўГ®ГҐ ГЁГ¬Гї: ";
             std::cin >> contact.name;
-            std::cout << "Введите новый телефон: ";
+            std::cout << "Г‚ГўГҐГ¤ГЁГІГҐ Г­Г®ГўГ»Г© ГІГҐГ«ГҐГґГ®Г­: ";
             std::cin >> contact.phone;
-            std::cout << "Введите новый email: ";
+            std::cout << "Г‚ГўГҐГ¤ГЁГІГҐ Г­Г®ГўГ»Г© email: ";
             std::cin >> contact.email;
 
             std::string street, city, postalCode, companyName, position;
-            std::cout << "Введите новую улицу: ";
-            std::cin.ignore(); // Игнорируем символ новой строки
+            std::cout << "Г‚ГўГҐГ¤ГЁГІГҐ Г­Г®ГўГіГѕ ГіГ«ГЁГ¶Гі: ";
+            std::cin.ignore(); // Г€ГЈГ­Г®Г°ГЁГ°ГіГҐГ¬ Г±ГЁГ¬ГўГ®Г« Г­Г®ГўГ®Г© Г±ГІГ°Г®ГЄГЁ
             std::getline(std::cin, street);
-            std::cout << "Введите новый город: ";
+            std::cout << "Г‚ГўГҐГ¤ГЁГІГҐ Г­Г®ГўГ»Г© ГЈГ®Г°Г®Г¤: ";
             std::getline(std::cin, city);
-            std::cout << "Введите новый почтовый индекс: ";
+            std::cout << "Г‚ГўГҐГ¤ГЁГІГҐ Г­Г®ГўГ»Г© ГЇГ®Г·ГІГ®ГўГ»Г© ГЁГ­Г¤ГҐГЄГ±: ";
             std::getline(std::cin, postalCode);
-            std::cout << "Введите новое название компании: ";
+            std::cout << "Г‚ГўГҐГ¤ГЁГІГҐ Г­Г®ГўГ®ГҐ Г­Г Г§ГўГ Г­ГЁГҐ ГЄГ®Г¬ГЇГ Г­ГЁГЁ: ";
             std::getline(std::cin, companyName);
-            std::cout << "Введите новую должность: ";
+            std::cout << "Г‚ГўГҐГ¤ГЁГІГҐ Г­Г®ГўГіГѕ Г¤Г®Г«Г¦Г­Г®Г±ГІГј: ";
             std::getline(std::cin, position);
 
-            contact.address = Address(street, city, postalCode); // Обновляем адрес
-            contact.company = Company(companyName, position); // Обновляем компанию
-            std::cout << "Контакт обновлен!\n";
+            contact.address = Address(street, city, postalCode); // ГЋГЎГ­Г®ГўГ«ГїГҐГ¬ Г Г¤Г°ГҐГ±
+            contact.company = Company(companyName, position); // ГЋГЎГ­Г®ГўГ«ГїГҐГ¬ ГЄГ®Г¬ГЇГ Г­ГЁГѕ
+            std::cout << "ГЉГ®Г­ГІГ ГЄГІ Г®ГЎГ­Г®ГўГ«ГҐГ­!\n";
             return;
         }
     }
-    std::cout << "Контакт не найден!\n";
+    std::cout << "ГЉГ®Г­ГІГ ГЄГІ Г­ГҐ Г­Г Г©Г¤ГҐГ­!\n";
 }
 
-// Удаление контакта по имени
+// Г“Г¤Г Г«ГҐГ­ГЁГҐ ГЄГ®Г­ГІГ ГЄГІГ  ГЇГ® ГЁГ¬ГҐГ­ГЁ
 void AddressBook::deleteContact() {
     std::string name;
-    std::cout << "Введите имя контакта для удаления: ";
+    std::cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГЁГ¬Гї ГЄГ®Г­ГІГ ГЄГІГ  Г¤Г«Гї ГіГ¤Г Г«ГҐГ­ГЁГї: ";
     std::cin >> name;
 
     for (auto it = contacts.begin(); it != contacts.end(); ++it) {
         if (it->name == name) {
             contacts.erase(it);
-            std::cout << "Контакт удален!\n";
+            std::cout << "ГЉГ®Г­ГІГ ГЄГІ ГіГ¤Г Г«ГҐГ­!\n";
             return;
         }
     }
-    std::cout << "Контакт не найден!\n";
+    std::cout << "ГЉГ®Г­ГІГ ГЄГІ Г­ГҐ Г­Г Г©Г¤ГҐГ­!\n";
 }
 
-// Поиск контакта по имени
+// ГЏГ®ГЁГ±ГЄ ГЄГ®Г­ГІГ ГЄГІГ  ГЇГ® ГЁГ¬ГҐГ­ГЁ
 void AddressBook::searchContact() const {
     std::string name;
-    std::cout << "Введите имя для поиска: ";
+    std::cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГЁГ¬Гї Г¤Г«Гї ГЇГ®ГЁГ±ГЄГ : ";
     std::cin >> name;
 
     for (const auto& contact : contacts) {
         if (contact.name == name) {
-            std::cout << "Контакт найден:\n";
+            std::cout << "ГЉГ®Г­ГІГ ГЄГІ Г­Г Г©Г¤ГҐГ­:\n";
             std::cout << contact;
             return;
         }
     }
-    std::cout << "Контакт не найден!\n";
+    std::cout << "ГЉГ®Г­ГІГ ГЄГІ Г­ГҐ Г­Г Г©Г¤ГҐГ­!\n";
 }
 
-// Отображение всех контактов
+// ГЋГІГ®ГЎГ°Г Г¦ГҐГ­ГЁГҐ ГўГ±ГҐГµ ГЄГ®Г­ГІГ ГЄГІГ®Гў
 void AddressBook::displayContacts() const {
     if (contacts.empty()) {
-        std::cout << "Адресная книга пуста.\n";
+        std::cout << "ГЂГ¤Г°ГҐГ±Г­Г Гї ГЄГ­ГЁГЈГ  ГЇГіГ±ГІГ .\n";
         return;
     }
 
     for (const auto& contact : contacts) {
-        std::cout << "Имя: " << contact.name << std::endl;
-        std::cout << "Телефон: " << contact.phone << std::endl;
+        std::cout << "Г€Г¬Гї: " << contact.name << std::endl;
+        std::cout << "Г’ГҐГ«ГҐГґГ®Г­: " << contact.phone << std::endl;
         std::cout << "Email: " << contact.email << std::endl;
-        std::cout << "Адрес: " << contact.address.getStreet() << ", "
+        std::cout << "ГЂГ¤Г°ГҐГ±: " << contact.address.getStreet() << ", "
             << contact.address.getCity() << ", "
             << contact.address.getPostalCode() << std::endl;
-        std::cout << "Компания: " << contact.company.getName() << ", "
-            << "Должность: " << contact.company.getPosition() << std::endl;
+        std::cout << "ГЉГ®Г¬ГЇГ Г­ГЁГї: " << contact.company.getName() << ", "
+            << "Г„Г®Г«Г¦Г­Г®Г±ГІГј: " << contact.company.getPosition() << std::endl;
         std::cout << "-------------------\n";
     }
 }
 
-// Сохранение контактов в файл
+// Г‘Г®ГµГ°Г Г­ГҐГ­ГЁГҐ ГЄГ®Г­ГІГ ГЄГІГ®Гў Гў ГґГ Г©Г«
 void AddressBook::saveToFile(const std::string& filename) const {
     std::ofstream outFile(filename);
     if (outFile.is_open()) {
@@ -131,14 +138,14 @@ void AddressBook::saveToFile(const std::string& filename) const {
             outFile << contact;
         }
         outFile.close();
-        std::cout << "Контакты сохранены в файл " << filename << ".\n";
+        std::cout << "ГЉГ®Г­ГІГ ГЄГІГ» Г±Г®ГµГ°Г Г­ГҐГ­Г» Гў ГґГ Г©Г« " << filename << ".\n";
     }
     else {
-        std::cout << "Не удалось открыть файл для записи.\n";
+        std::cout << "ГЌГҐ ГіГ¤Г Г«Г®Г±Гј Г®ГІГЄГ°Г»ГІГј ГґГ Г©Г« Г¤Г«Гї Г§Г ГЇГЁГ±ГЁ.\n";
     }
 }
 
-// Загрузка контактов из файла
+// Г‡Г ГЈГ°ГіГ§ГЄГ  ГЄГ®Г­ГІГ ГЄГІГ®Гў ГЁГ§ ГґГ Г©Г«Г 
 void AddressBook::loadFromFile(const std::string& filename) {
     std::ifstream inFile(filename);
     if (inFile.is_open()) {
@@ -148,9 +155,9 @@ void AddressBook::loadFromFile(const std::string& filename) {
             contacts.push_back(contact);
         }
         inFile.close();
-        std::cout << "Контакты загружены из файла " << filename << ".\n";
+        std::cout << "ГЉГ®Г­ГІГ ГЄГІГ» Г§Г ГЈГ°ГіГ¦ГҐГ­Г» ГЁГ§ ГґГ Г©Г«Г  " << filename << ".\n";
     }
     else {
-        std::cout << "Не удалось открыть файл для чтения.\n";
+        std::cout << "ГЌГҐ ГіГ¤Г Г«Г®Г±Гј Г®ГІГЄГ°Г»ГІГј ГґГ Г©Г« Г¤Г«Гї Г·ГІГҐГ­ГЁГї.\n";
     }
 }
