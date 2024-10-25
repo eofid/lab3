@@ -56,7 +56,11 @@ void AddressBook::editContact() {
             std::cout << "Ââåäèòå íîâûé email: ";
             std::cin >> contact.email;
 
-            std::string street, city, postalCode, companyName, position;
+            std::string street;
+            std:: string city;
+            std:: string postalCode;
+            std:: string companyName;
+            std:: string position;
             std::cout << "Ââåäèòå íîâóþ óëèöó: ";
             std::cin.ignore(); // Èãíîðèðóåì ñèìâîë íîâîé ñòðîêè
             std::getline(std::cin, street);
