@@ -3,25 +3,29 @@
 
 #include <string>
 #include "AddressBook.h"
-#include "IPanel.h"
-#include "AddressBookInterface.h"
+#include "IPanel.h"  // Предполагаем, что IPanel объявлен
 
-class UserPanel : public IPanel, public AddressBookInterface {
+class UserPanel : public IPanel {
 private:
     AddressBook& addressBook;
 
 public:
-    explicit UserPanel(AddressBook& addressBook);
-    void displayMenu() override;
-    void viewContacts() const override;
-    void searchContacts() const override;
-    void loadContactsFromFile() override;
+    // Конструктор UserPanel, принимающий ссылку на AddressBook
+    UserPanel(AddressBook& addressBook);
 
-    // Ïóñòûå ðåàëèçàöèè äëÿ ìåòîäîâ, êîòîðûå íå íóæíû ïîëüçîâàòåëþ
-    void addContact() override {}
-    void editContact() override {}
-    void deleteContact() override {}
-    void saveContactsToFile() const override {}
+    // Реализация виртуального метода для отображения меню
+    void displayMenu() override;
+
+    // Метод для просмотра контактов (переопределение из IPanel)
+    void viewContacts() const override;
+
+    // Метод для поиска контактов (переопределение из IPanel)
+    void searchContacts() const override;
+
+    // Пустая реализация addContact, поскольку пользователи не могут добавлять контакты
+    void addContact() override {
+        // Оставлено пустым, так как пользователи не имеют прав на добавление
+    }
 };
 
 #endif // USERPANEL_H
