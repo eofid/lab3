@@ -5,7 +5,6 @@ Contact::Contact(const std::string& name, const std::string& phone, const std::s
                  const Address& address, const Company& company)
     : name(name), phone(phone), email(email), address(address), company(company) {}
 
-
 // Реализация оператора вывода (для записи в файл)
 std::ostream& operator<<(std::ostream& os, const Contact& contact) {
     os << contact.name << "\n" << contact.phone << "\n" << contact.email << "\n";
@@ -22,7 +21,7 @@ std::istream& operator>>(std::istream& is, Contact& contact) {
 
     std::string street;
     std::string city;
-    std:: string postalCode;
+    std::string postalCode;
     std::getline(is, street);
     std::getline(is, city);
     std::getline(is, postalCode);
@@ -30,7 +29,7 @@ std::istream& operator>>(std::istream& is, Contact& contact) {
     contact.address = Address(street, city, postalCode);
 
     std::string companyName;
-    std:: string position;
+    std::string position;
     std::getline(is, companyName);
     std::getline(is, position);
 
