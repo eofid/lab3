@@ -38,7 +38,8 @@ std::istream& operator>>(std::istream& is, Contact& contact) {
 
     contact.address = Address(street, city, postalCode); // Ïðèñâàèâàåì àäðåñ
 
-    std::string companyName, position;
+    std::string companyName;
+    std:: string position;
     std::getline(is, companyName);
     std::getline(is, position);
 
