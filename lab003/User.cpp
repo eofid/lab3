@@ -1,15 +1,15 @@
 #include "User.h"
 
-// Конструктор
-User::User(const std::string& username, const std::string& password)
+// ГЉГ®Г­Г±ГІГ°ГіГЄГІГ®Г°
+User::User(const std::string_veiw username, const std::string_veiw password)
     : username(username), password(password) {}
 
-// Аутентификация пользователя
-bool User::authenticate(const std::string& username, const std::string& password) const {
+// ГЂГіГІГҐГ­ГІГЁГґГЁГЄГ Г¶ГЁГї ГЇГ®Г«ГјГ§Г®ГўГ ГІГҐГ«Гї
+bool User::authenticate(const std::string_veiw username, const std::string_veiw password) const {
     return this->username == username && this->password == password;
 }
 
-// Получение имени пользователя
+// ГЏГ®Г«ГіГ·ГҐГ­ГЁГҐ ГЁГ¬ГҐГ­ГЁ ГЇГ®Г«ГјГ§Г®ГўГ ГІГҐГ«Гї
 std::string User::getUsername() const {
     return username;
 }
