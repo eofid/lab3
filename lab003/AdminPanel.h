@@ -11,7 +11,7 @@ private:
     AddressBook& addressBook;
 
 public:
-    AdminPanel(AddressBook& addressBook);
+   explicit AdminPanel(AddressBook& addressBook);
     void displayMenu() override;
     void addContact() override;
     void editContact() override;
